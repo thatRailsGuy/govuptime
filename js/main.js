@@ -7,7 +7,7 @@ function chart_this(){
     array_data.push(["Department", "Employees", "Furloughed"]);
     sorted_for_total = _.sortBy(employee_data, function(item){ return item.furloughed}).reverse();
     $.each(sorted_for_total, function(i, item) {
-      array_data.push([item.short_name,item.employees,item.furloughed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")]);
+      array_data.push([item.short_name,item.employees,item.furloughed]);
     });
     var data = google.visualization.arrayToDataTable(array_data);
 
